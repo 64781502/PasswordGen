@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PasswordGen
+﻿namespace PasswordGen.Models
 {
     public class Password
     {
@@ -39,11 +31,7 @@ namespace PasswordGen
             _begin_with_a_letter = begin_with_a_letter;
             _special_chars = sc_box.Text;
 
-            Stopwatch stopwatch = new();
-            stopwatch.Start();
             GeneratePassword();
-            stopwatch.Stop();
-            MessageBox.Show($"Took: {stopwatch.Elapsed.TotalMicroseconds} μs.");
         }
 
         private void GeneratePassword()
@@ -54,12 +42,14 @@ namespace PasswordGen
 
             string CHARSET = string.Empty;
 
-            // generator
+            #region query generator
 
             if (_include_numbers) { CHARSET += NUMS; }
             if (_include_lowercase) { CHARSET += ASCII_LOWERCASE; }
             if (_include_uppercase) { CHARSET += ASCII_UPPERCASE; }
             if (_include_special_characters) { CHARSET += _special_chars; }
+
+            #endregion
 
             if (!string.IsNullOrEmpty(CHARSET))
             {

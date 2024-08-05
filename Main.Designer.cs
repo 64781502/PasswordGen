@@ -45,7 +45,7 @@
             // 
             // _generate_button
             // 
-            _generate_button.Location = new Point(323, 212);
+            _generate_button.Location = new Point(341, 216);
             _generate_button.Name = "_generate_button";
             _generate_button.Size = new Size(75, 23);
             _generate_button.TabIndex = 1;
@@ -78,12 +78,12 @@
             // 
             // _length_slider_label
             // 
-            _length_slider_label.AutoSize = true;
-            _length_slider_label.Location = new Point(305, 60);
+            _length_slider_label.Location = new Point(276, 70);
             _length_slider_label.Name = "_length_slider_label";
-            _length_slider_label.Size = new Size(107, 15);
+            _length_slider_label.Size = new Size(200, 15);
             _length_slider_label.TabIndex = 3;
             _length_slider_label.Text = "Password length: X";
+            _length_slider_label.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // _include_uppercase_checkbox
             // 
@@ -158,19 +158,19 @@
             // 
             // _password_strength
             // 
-            _password_strength.AutoSize = true;
-            _password_strength.Location = new Point(301, 77);
+            _password_strength.Location = new Point(276, 87);
             _password_strength.Name = "_password_strength";
-            _password_strength.Size = new Size(116, 15);
+            _password_strength.Size = new Size(200, 15);
             _password_strength.TabIndex = 11;
             _password_strength.Text = "Password strength: 0";
+            _password_strength.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(763, 304);
+            ClientSize = new Size(763, 301);
             Controls.Add(_password_strength);
             Controls.Add(_include_sc_textbox);
             Controls.Add(_start_with_letter_checkbox);

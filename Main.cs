@@ -1,6 +1,5 @@
 using PasswordGen.Enums;
-using System;
-using System.Net;
+using PasswordGen.Models;
 
 namespace PasswordGen
 {
@@ -51,7 +50,35 @@ namespace PasswordGen
             _output_box.SelectAll();
             _output_box.SelectionAlignment = HorizontalAlignment.Center;
             _manager.passwords.Add(password);
-            _password_strength.Text = $"Password strength: {_manager.CalculatePasswordStrength(_include_numbers_checkbox.Checked, _include_sc_checkbox.Checked)}";
+
+            PasswordStrength strength = _manager.CalculatePasswordStrength(_include_numbers_checkbox.Checked, _include_sc_checkbox.Checked);
+
+            _password_strength.Text = $"Password strength: {strength}";
+
+            switch (strength)
+            {
+                case PasswordStrength.Blank:
+                    _password_strength.ForeColor = Color.Black;
+                    break;
+                case PasswordStrength.VeryWeak:
+                    _password_strength.ForeColor = Color.DarkRed;
+                    break;
+                case PasswordStrength.Weak:
+                    _password_strength.ForeColor = Color.Red;
+                    break;
+                case PasswordStrength.Medium:
+                    _password_strength.ForeColor = Color.Orange;
+                    break;
+                case PasswordStrength.Strong:
+                    _password_strength.ForeColor = Color.Green;
+                    break;
+                case PasswordStrength.VeryStrong:
+                    _password_strength.ForeColor = Color.DarkGreen;
+                    break;
+                default:
+                    _password_strength.ForeColor = Color.Black;
+                    break;
+            }
         }
 
         private void _include_sc_checkbox_CheckedChanged(object sender, EventArgs e)

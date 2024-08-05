@@ -1,9 +1,6 @@
 ﻿using PasswordGen.Enums;
-using System;
-using static System.Formats.Asn1.AsnWriter;
-using System.Text.RegularExpressions;
 
-namespace PasswordGen
+namespace PasswordGen.Models
 {
     public class PasswordManager
     {
@@ -30,7 +27,7 @@ namespace PasswordGen
             else if (include_numbers && !include_sc)
             {
                 score++;
-            }            
+            }
 
 
             if (latest_password.Value! == "(empty)")

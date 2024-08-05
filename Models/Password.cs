@@ -33,7 +33,7 @@
 
             GeneratePassword();
         }
-
+        
         private void GeneratePassword()
         {
             string? password = string.Empty;

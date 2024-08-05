@@ -48,7 +48,7 @@
             _generate_button.Location = new Point(341, 216);
             _generate_button.Name = "_generate_button";
             _generate_button.Size = new Size(75, 23);
-            _generate_button.TabIndex = 1;
+            _generate_button.TabIndex = 0;
             _generate_button.Text = "Generate";
             _generate_button.UseVisualStyleBackColor = true;
             _generate_button.Click += _generate_button_Click;
@@ -61,7 +61,7 @@
             _length_slider.Minimum = 1;
             _length_slider.Name = "_length_slider";
             _length_slider.Size = new Size(735, 45);
-            _length_slider.TabIndex = 0;
+            _length_slider.TabIndex = 1;
             _length_slider.Value = 16;
             _length_slider.Scroll += _length_slider_Scroll;
             // 
